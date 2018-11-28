@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CreditCardInterestCalc")]
+[assembly: AssemblyTitle("CreditCardInterestCalculator")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Toshiba")]
-[assembly: AssemblyProduct("CreditCardInterestCalc")]
+[assembly: AssemblyProduct("CreditCardInterestCalculator")]
 [assembly: AssemblyCopyright("Copyright © Toshiba 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("41177ce4-a909-49e9-bde5-2fff05583af3")]
+[assembly: Guid("6673ed2b-67dc-4847-9242-9f3b37e39b16")]
 
 // Version information for an assembly consists of the following four values:
 //

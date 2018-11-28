@@ -117,7 +117,7 @@ namespace CreditCardInterestCalculator
                 Console.WriteLine("     End Wallet(" + (i + 1) + ")------------------------------------------------------------");
                 Console.WriteLine(" ");
             }
-            Console.WriteLine("End " + FullName + " Interest Summary..................");
+            Console.WriteLine("End " + FullName + " Interest Summary...................");
             Console.WriteLine(" ");
         }
     }

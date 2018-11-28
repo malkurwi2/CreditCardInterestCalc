@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CreditCardInterestCalculator
 {
-    class Person
+    public class Person
     {
         public string FullName { get; set; }
         public int nWallets { get; set; }
         public Wallet[] Wallets { get; set; }
         public decimal TotalInterest { get; set; } = 0;
 
-        public void InterestCalculation()
+        public void InitPersonWalletCard()
         {
             this.Wallets = new Wallet[nWallets];
             //loop throu each wallet
@@ -27,12 +27,22 @@ namespace CreditCardInterestCalculator
                 {
                     SetCardTypeAndInterest(i, j);
                     SetCardBalance(i, j);
-                    this.Wallets[i].Cards[j].CInterest = this.Wallets[i].Cards[j].Balance * (this.Wallets[i].Cards[j].Interest/100);
+                }
+            }
+        }
+        public void InterestCalculation()
+        {
+            //loop throu each wallet
+            for (int i = 0; i < this.nWallets; i++)
+            {
+                //loop throu each card
+                for (int j = 0; j < this.Wallets[i].NCards; j++)
+                {
+                    this.Wallets[i].Cards[j].CInterest = this.Wallets[i].Cards[j].Balance * (this.Wallets[i].Cards[j].Interest / 100);
                     this.Wallets[i].WInterest += this.Wallets[i].Cards[j].CInterest;
                 }
                 this.TotalInterest += this.Wallets[i].WInterest;
             }
-            CalcInterest();
         }
         private void GetNumberOfCards(int i)
         {
@@ -102,7 +112,7 @@ namespace CreditCardInterestCalculator
             this.Wallets[i].Cards[j].Balance = intTemp;
             Console.WriteLine(" ");
         }
-        private void CalcInterest()
+        public void ShowSummaryInterest()
         {
             Console.WriteLine(FullName.ToUpper() + " Total Interest is: " + TotalInterest.ToString("C2"));
             Console.WriteLine("     Breaking down each wallet interest:");
@@ -120,14 +130,37 @@ namespace CreditCardInterestCalculator
             Console.WriteLine("End " + FullName + " Interest Summary..................");
             Console.WriteLine(" ");
         }
+        //public override bool Equals(object obj)
+        //{
+        //    bool val = true;
+        //    Person p = (Person)obj;
+        //    if (this.nWallets == p.nWallets && this.TotalInterest==p.TotalInterest)
+        //    {
+        //        for (int i = 0; i < this.nWallets; i++)
+        //        {
+        //            if(this.Wallets[i].NCards==p.Wallets[i].NCards && this.Wallets[i].WInterest== p.Wallets[i].WInterest)
+        //            for (int j = 0; j < this.Wallets[i].NCards; j++)
+        //            {
+        //                this.Wallets[i].Cards[j].CInterest = p.Wallets[i].Cards[j].CInterest
+
+
+
+        //            }
+
+        //        }
+        //    }
+        //    else
+        //        val = false;
+        //    return val;
+        //}
     }
-    class Wallet
+    public class Wallet
     {
         public CreditCard[] Cards { get; set; }
         public int NCards { get; set; }
         public decimal WInterest { get; set; } = 0;
     }
-    class CreditCard
+    public class CreditCard
     {
         public enum CreditCardType
         {

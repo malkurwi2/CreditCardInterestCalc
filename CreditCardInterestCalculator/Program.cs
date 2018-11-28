@@ -32,8 +32,9 @@ namespace CreditCardInterestCalculator
                 Console.WriteLine(" ");
                 Console.WriteLine(" ");
                 p.nWallets = intTemp;
+                p.InitPersonWalletCard();
                 p.InterestCalculation();
-
+                p.ShowSummaryInterest();
                 Console.WriteLine(" ");
                 Console.WriteLine("Enter 'n' for next person; otherwise exit...");
             }
